@@ -11,13 +11,12 @@ def get_population(country_dict):
         '1980':int(country_dict['1980 Population']),
         '1970':int(country_dict['1970 Population']),
     }
-    labels=population_dict.keys()
-    values=population_dict.values()
+    labels=list(population_dict.keys())
+    values=list(population_dict.values())
     return labels, values
 
 
 
 def generate_bar_chart(labels,values):
-    fig, ax=plt.subplots()
-    ax.bar(labels, values)
+    plt.plot(labels, values)
     plt.show()
