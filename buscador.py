@@ -38,17 +38,22 @@ def population():
     
     What do you wanna watch?: """)
 
-    if int(options)==1:
-        print(' ')
-        selection=input("""    Introduce a country: """)
-        search=filter.filter_for_population(selection,parameter='Country/Territory')
-        print(search[0])
-        country_dict=search[0]
-        labels,values=charts.get_population(country_dict)
-        charts.generate_bar_chart(labels,values)
-    elif int(options)==2:
-        pass
-    else:
-        print('That is not an option')
+    try:
+        if int(options)==1:
+            print(' ')
+            selection=input("""    Introduce a country: """)
+            search=filter.filter_for_population(selection,parameter='Country/Territory')
+            print(search[0])
+            country_dict=search[0]
+            labels,values=charts.get_population(country_dict)
+            charts.generate_bar_chart(labels,values)
+        elif int(options)==2:
+            pass
+        else:
+            print('That is not an option')
+    except IndexError:
+        print('Typing error, check the name')
+    except ValueError:
+        print('Invalid parameter')
 
     
