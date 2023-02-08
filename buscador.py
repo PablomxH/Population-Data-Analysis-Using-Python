@@ -39,15 +39,20 @@ def population():
 
     try:
         if int(options)==1:
-            print(' ')
-            selection=input("""    Introduce a country: """)
-            search=filter.filter_for_population(selection,parameter='Country/Territory')
-            print(search[0])
-            country_dict=search[0]
-            labels,values=charts.get_population(country_dict)
-            charts.generate_bar_chart(labels,values)
+            filter.population_country()
         elif int(options)==2:
-            comparsion()
+            option=input("""
+    Options of population:
+    [1]Comparison between two countries    
+    [2]Comparison by continents
+    
+    What do you wanna watch?: """)
+            if int(option)==1:
+                filter.two_countries()
+            elif int(option)==2:
+                filter.comparsion()
+            else:
+                print('Thats not an option')
         else:
             print('That is not an option')
     except IndexError:
@@ -55,13 +60,3 @@ def population():
     except ValueError:
         print('Invalid parameter')
 
-def comparsion():
-    print('')
-    continent=input('    Write a continent: ')
-    data=csv_reader.csv_reader_filter(continent)
-    if len(data)>0:
-        countries=list(map(lambda x:x['Country/Territory'], data))
-        per=list(map(lambda x:x['World Population Percentage'], data))
-        charts.generate_pie_chart(countries,per)
-    else:
-        print('Thats not an option')
