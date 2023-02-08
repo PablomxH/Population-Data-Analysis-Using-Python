@@ -10,8 +10,10 @@ def run():
     
     if option==1:
         buscador.population()
-    elif option:
+    elif option==2:
         buscador.browser()
+    else:
+        print('That is not an option')
 
 
 if __name__=='__main__':
