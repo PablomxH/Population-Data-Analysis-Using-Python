@@ -1,7 +1,6 @@
 import filter
 import csv_reader
 import charts
-import csv
 
 def browser():
     menu=input("""
@@ -48,7 +47,7 @@ def population():
             labels,values=charts.get_population(country_dict)
             charts.generate_bar_chart(labels,values)
         elif int(options)==2:
-            pass
+            comparsion()
         else:
             print('That is not an option')
     except IndexError:
@@ -56,4 +55,13 @@ def population():
     except ValueError:
         print('Invalid parameter')
 
-    
+def comparsion():
+    print('')
+    continent=input('    Write a continent: ')
+    data=csv_reader.csv_reader_filter(continent)
+    if len(data)>0:
+        countries=list(map(lambda x:x['Country/Territory'], data))
+        per=list(map(lambda x:x['World Population Percentage'], data))
+        charts.generate_pie_chart(countries,per)
+    else:
+        print('Thats not an option')
