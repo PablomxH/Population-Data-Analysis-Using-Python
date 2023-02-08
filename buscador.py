@@ -1,5 +1,6 @@
 import filter
 import csv_reader
+import charts
 import csv
 
 def browser():
@@ -8,22 +9,31 @@ def browser():
     [1]Rank     [3]Capital
     [2]Country  [4]Continet
     
-    What do you wanna search?:""")
+    What do you wanna search?: """)
+    print(' ')
     
     if int(menu)==1:
-        selection=input('Introduce a rank: ')
+        selection=input("""    Introduce a rank: """)
         filter.filtro(selection,parameter='Rank')
     elif int(menu)==2:
-        selection=input('Introduce a country: ')
+        selection=input("""    Introduce a country: """)
         filter.filtro(selection,parameter='Country/Territory')
     elif int(menu)==3:
-        selection=input('Introduce a capital: ')
+        selection=input("""    Introduce a capital: """)
         filter.filtro(selection,parameter= 'Capital')
     elif int(menu)==4:
-        selection=input('Introduce a continent: ')
-        filter.filtro(selection,parameter='Continent')
+        selection=input("""    Introduce a continent: """)
+        filter.filter_for_Continent(selection,parameter='Continent')
     else:
-        print('Search not found')
+        print('That is not an option')
 
 def population():
-    pass
+    print(' ')
+    selection=input("""    Introduce a country: """)
+    search=filter.filter_for_population(selection,parameter='Country/Territory')
+    print(search[0])
+    country_dict=search[0]
+    labels,values=charts.get_population(country_dict)
+    charts.generate_bar_chart(labels,values)
+
+

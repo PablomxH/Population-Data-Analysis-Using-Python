@@ -1,13 +1,10 @@
 import buscador
-import filter
-import csv
-import csv_reader
 
 def run():
     option=int(input("""
     Search by:
-    [1] Population by year
-    [2] Rank,capital, country etc.
+    [1] Population of a country by year
+    [2] Rank,capital,country etc.
     
     Choose an option:   """))
     
