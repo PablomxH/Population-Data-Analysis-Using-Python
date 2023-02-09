@@ -1,7 +1,10 @@
 import buscador
 
+#I define the first interaction of the program
+#according to the request redirect the user to different modules.
+
 def run():
-    try:
+    try:                                        #Error handling in case of an invalid option.
         option=int(input("""
     Search by:
     [1] Population of a country by year

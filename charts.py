@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+#function to extract only population from the dictionary
 def get_population(country_dict):
     population_dict={
         '2022':int(country_dict['2022 Population']),
@@ -15,8 +16,7 @@ def get_population(country_dict):
     values=list(population_dict.values())
     return labels, values
 
-
-
+#graph for population of a country
 def generate_bar_chart(labels,values,country):
     fig, ax = plt.subplots()
     ax.plot(labels, values)
@@ -26,12 +26,14 @@ def generate_bar_chart(labels,values,country):
 
     plt.show()
 
+#pie chart
 def generate_pie_chart(labels,values):
     fig, ax=plt.subplots()
     ax.pie(values,labels=labels)
     ax.axis('equal')
     plt.show()
 
+#graph for population of 2 countries
 def two_charts(country1,country2,name1,name2):
     #x = [1970, 1980, 1990, 2000, 2010, 2015, 2020, 2022]
     x = [2022, 2020, 2015, 2010, 2000, 1990, 1980, 1970]

@@ -1,5 +1,7 @@
 import csv
+#reading from the database
 
+#filter for most searches the information is extracted in a list of dictionaries
 def csv_reader():
     with open('./population.csv', 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
@@ -12,6 +14,7 @@ def csv_reader():
             data.append(country_dict)
         return data
 
+#filter for continents
 def csv_reader_filter(continent):
     with open('./population.csv', 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')

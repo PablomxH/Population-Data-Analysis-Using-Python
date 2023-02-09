@@ -1,8 +1,9 @@
 import filter
-import csv_reader
-import charts
 
-def browser():
+#browser, to choose according to which parameter we want to search for countries
+#import filter since after selecting the parameter with filter we look for
+#the required information
+def browser():                          
     menu=input("""
     Parameters:
     [1]Rank     [3]Capital
@@ -29,6 +30,8 @@ def browser():
     except IndexError:
         print('Invalid parameter')
 
+
+#population, to see the population, be it from a single country, comparison of 2 or from a continent
 def population():
     options=input("""
     Options of population:

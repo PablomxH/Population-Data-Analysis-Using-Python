@@ -1,22 +1,28 @@
 import csv_reader
 import charts
 
+#Here,filter all the information according to the request
+
+#"filtro", receives from "browser" the parameter range, name etc, and the value of the parameter to filter
 def filtro(selection,parameter):
     data=csv_reader.csv_reader()
     search=list(filter(lambda item:item[parameter]==selection,data))
-    print(search[0])
+    print(search[0])    #to view in dictionary format and not view a list with just a dictionary
     return search
 
+#similar to "filtro" avoiding seeing only the first index
 def filter_for_Continent(selection,parameter):
     data=csv_reader.csv_reader()
     search=list(filter(lambda item:item[parameter]==selection,data))
     print(search)
 
+#Extraction of the entire population of a country
 def filter_for_population(selection,parameter):
     data=csv_reader.csv_reader()
     search=list(filter(lambda item:item[parameter]==selection,data))
     return search
 
+#comparison of population of a continent with pie chart
 def comparsion():
     print('')
     continent=input('    Write a continent: ')
@@ -28,6 +34,7 @@ def comparsion():
     else:
         print('Thats not an option')
 
+#graph of population growth of a country
 def population_country():
     print(' ')
     selection=input("""    Introduce a country: """)
@@ -37,6 +44,7 @@ def population_country():
     labels,values=charts.get_population(country_dict)
     charts.generate_bar_chart(labels,values,selection)
 
+#comparison graph of population growth of 2 countries
 def two_countries():
     print(' ')
     selection=input("""    Introduce a country: """)
