@@ -39,19 +39,18 @@ def population_country():
 
 def two_countries():
     print(' ')
-    selection1=input("""    Introduce first country: """)
-    search1=filter_for_population(selection1,parameter='Country/Territory')
-    print(search1[0])
-    country_dict1=search1[0]
+    selection=input("""    Introduce a country: """)
+    search=filter_for_population(selection,parameter='Country/Territory')
+    country_dict=search[0]
+    values=charts.get_population(country_dict)
+    #print(values[1])
 
     print(' ')
-    selection2=input("""    Introduce second country: """)
+    selection2=input("""    Introduce a country: """)
     search2=filter_for_population(selection2,parameter='Country/Territory')
-    print(search2[0])
     country_dict2=search2[0]
+    values2=charts.get_population(country_dict2)
+    #print(values2[1])
 
+    charts.two_charts(values[1],values2[1],selection,selection2)
 
-    labels1,values1=charts.get_population(country_dict1)
-    labels2,values2=charts.get_population(country_dict2)
-    charts.generate_bar_chart(labels1,values1)
-    charts.generate_bar_chart(labels2,values2)

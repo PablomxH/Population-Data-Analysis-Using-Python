@@ -18,11 +18,34 @@ def get_population(country_dict):
 
 
 def generate_bar_chart(labels,values):
-    plt.plot(labels, values)
+    fig, ax = plt.subplots()
+    ax.plot(labels, values)
+    ax.set_xlabel('Years')
+    ax.set_ylabel('Population')
+    ax.set_title('Graph')
+
     plt.show()
 
 def generate_pie_chart(labels,values):
     fig, ax=plt.subplots()
     ax.pie(values,labels=labels)
     ax.axis('equal')
+    plt.show()
+
+def two_charts(country1,country2,name1,name2):
+    #x = [1970, 1980, 1990, 2000, 2010, 2015, 2020, 2022]
+    x = [2022, 2020, 2015, 2010, 2000, 1990, 1980, 1970]
+    y1 = country1
+    y2 = country2
+
+    fig, ax = plt.subplots()
+
+    ax.plot(x, y1, label=name1)
+    ax.plot(x, y2, label=name2)
+
+    ax.set_xlabel('Years')
+    ax.set_ylabel('Population')
+    ax.set_title('Comparison between countries')
+    ax.legend()
+
     plt.show()
