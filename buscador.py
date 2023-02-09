@@ -1,4 +1,5 @@
 import filter
+import main
 
 #browser, to choose according to which parameter we want to search for countries
 #import filter since after selecting the parameter with filter we look for
@@ -8,6 +9,8 @@ def browser():
     Parameters:
     [1]Rank     [3]Capital
     [2]Country  [4]Continet
+
+    [5]Back
     
     What do you wanna search?: """)
     print(' ')
@@ -25,6 +28,8 @@ def browser():
         elif int(menu)==4:
             selection=input("""    Introduce a continent: """)
             filter.filter_for_Continent(selection,parameter='Continent')
+        elif int(menu)==5:
+            main.run()
         else:
             print('That is not an option')
     except IndexError:
@@ -36,7 +41,9 @@ def population():
     options=input("""
     Options of population:
     [1]Country    
-    [2]Comparison between countries 
+    [2]Comparison between countries
+
+    [5]Back
     
     What do you wanna watch?: """)
 
@@ -49,13 +56,19 @@ def population():
     [1]Comparison between two countries    
     [2]Comparison by continents
     
+    [5]Back
+    
     What do you wanna watch?: """)
             if int(option)==1:
                 filter.two_countries()
             elif int(option)==2:
                 filter.comparsion()
+            elif int(option)==5:
+                population()
             else:
                 print('Thats not an option')
+        elif int(options)==5:
+            main.run()        
         else:
             print('That is not an option')
     except IndexError:

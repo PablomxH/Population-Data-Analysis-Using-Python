@@ -6,7 +6,8 @@ import buscador
 def run():
     try:                                        #Error handling in case of an invalid option.
         option=int(input("""
-    Search by:
+    Write a number search by:
+
     [1] Population of a country by year
     [2] Rank,capital,country etc.
         
