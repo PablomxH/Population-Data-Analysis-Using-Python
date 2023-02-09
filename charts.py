@@ -17,12 +17,12 @@ def get_population(country_dict):
 
 
 
-def generate_bar_chart(labels,values):
+def generate_bar_chart(labels,values,country):
     fig, ax = plt.subplots()
     ax.plot(labels, values)
     ax.set_xlabel('Years')
     ax.set_ylabel('Population')
-    ax.set_title('Graph')
+    ax.set_title('Population of '+country)
 
     plt.show()
 

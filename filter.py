@@ -35,7 +35,7 @@ def population_country():
     print(search[0])
     country_dict=search[0]
     labels,values=charts.get_population(country_dict)
-    charts.generate_bar_chart(labels,values)
+    charts.generate_bar_chart(labels,values,selection)
 
 def two_countries():
     print(' ')
