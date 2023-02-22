@@ -1,0 +1,10 @@
+name: base
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - mamba==1.1.0
+  - conda==22.11.1
+  - pip
+  - setuptools=65
+prefix: /home/pablogh/mambaforge
