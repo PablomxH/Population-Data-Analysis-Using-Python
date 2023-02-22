@@ -1,8 +1,9 @@
 # Population Python_CSV-Matplotlib 
 
-![]](https://img.shields.io/github/tag/pandao/editor.md.svg) 
 
 Extracción de datos de un CSV, filtros de datos, transformación y generación de gráficos con Matplotlib, el programa se subdivide en diferentes módulos para segmentar el código.
+
+Ambiente del programa en enviroment.yml
 
 ##CSV:
 [World Population Dataset](https://www.kaggle.com/datasets/iamsouravbanerjee/world-population-dataset "World Population Dataset")
