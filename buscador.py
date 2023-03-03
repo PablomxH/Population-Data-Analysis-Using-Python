@@ -17,7 +17,7 @@ def browser():
 
     try:   
         if int(menu)==1:
-            selection=input("""    Introduce a rank: """)
+            selection=int(input("""    Introduce a rank: """))
             filter.filtro(selection,parameter='Rank')
         elif int(menu)==2:
             selection=input("""    Introduce a country: """)
@@ -27,7 +27,7 @@ def browser():
             filter.filtro(selection,parameter= 'Capital')
         elif int(menu)==4:
             selection=input("""    Introduce a continent: """)
-            filter.filter_for_Continent(selection,parameter='Continent')
+            filter.filtro(selection,parameter='Continent')
         elif int(menu)==5:
             main.run()
         else:

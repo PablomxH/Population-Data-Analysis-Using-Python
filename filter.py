@@ -4,17 +4,27 @@ import charts
 #Here,filter all the information according to the request
 
 #"filtro", receives from "browser" the parameter range, name etc, and the value of the parameter to filter
+#Before learning pandas this was a solution
+# def filtro(selection,parameter):
+#     data=csv_reader.csv_reader()
+#     search=list(filter(lambda item:item[parameter]==selection,data))
+#     print(search[0])    #to view in dictionary format and not view a list with just a dictionary
+#     return search
+
 def filtro(selection,parameter):
-    data=csv_reader.csv_reader()
-    search=list(filter(lambda item:item[parameter]==selection,data))
-    print(search[0])    #to view in dictionary format and not view a list with just a dictionary
-    return search
+    print(selection)
+    print(parameter)
+    data=csv_reader.csv_reader_pandas()
+    fila=data.loc[data[str(parameter)] == selection]
+    print(fila)
+
 
 #similar to "filtro" avoiding seeing only the first index
-def filter_for_Continent(selection,parameter):
-    data=csv_reader.csv_reader()
-    search=list(filter(lambda item:item[parameter]==selection,data))
-    print(search)
+#Before learning pandas this was a solution
+# def filter_for_Continent(selection,parameter):
+#     data=csv_reader.csv_reader()
+#     search=list(filter(lambda item:item[parameter]==selection,data))
+#     print(search)
 
 #Extraction of the entire population of a country
 def filter_for_population(selection,parameter):
