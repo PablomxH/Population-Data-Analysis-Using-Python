@@ -1,5 +1,6 @@
 import filter
 import main
+import tools
 
 #browser, to choose according to which parameter we want to search for countries
 #import filter since after selecting the parameter with filter we look for
@@ -15,7 +16,9 @@ def browser():
     What do you wanna search?: """)
     print(' ')
 
-    try:   
+    try:
+        tools.clear_screen()
+
         if int(menu)==1:
             selection=int(input("""    Introduce a rank: """))
             filter.filtro(selection,parameter='Rank')
@@ -44,10 +47,12 @@ def population():
     [2]Comparison between countries
 
     [5]Back
-    
+  
     What do you wanna watch?: """)
 
     try:
+        tools.clear_screen()
+        
         if int(options)==1:
             filter.population_country()
         elif int(options)==2:

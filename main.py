@@ -1,4 +1,5 @@
 import buscador
+import tools
 
 #I define the first interaction of the program
 #according to the request redirect the user to different modules.
@@ -11,14 +12,15 @@ def run():
             option=int(input("""
         Write a number search by:
 
-        [1] Population of a country by year
+        [1] Population of a country by year     Graphs
         [2] Rank,capital,country etc.
 
         [3] Exit ⌫
-            
+      
         Choose an option:   """))
         
-
+            tools.clear_screen()
+        
             if option==1:
                 buscador.population()
             elif option==2:
